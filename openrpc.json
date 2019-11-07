@@ -135,7 +135,7 @@
               }
         ],
         "result": {
-            "name": "pendingTransactions",
+            "name": "Array of block hashes",
             "schema": {
               "type": "array",
               "items": {
@@ -626,9 +626,19 @@
         "Transaction": {
           "type": "object",
           "required": [
+            "s",
+            "v",
             "gas",
+            "data",
+            "blockHash",
             "gasPrice",
-            "nonce"
+            "to",
+            "r",
+            "transactionIndex",
+            "value",
+            "nonce",
+            "from",
+            "hash"
           ],
           "properties": {
             "blockHash": {
