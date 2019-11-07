@@ -15,7 +15,7 @@
         "summary": "Returns the information about a transaction requested by transaction hash.",
         "params": [
             {
-                "$ref": "#/components/contentDescriptors/Transaction"
+                "$ref": "#/components/contentDescriptors/TransactionHash"
             }
         ],
         "result": {
