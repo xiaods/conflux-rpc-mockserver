@@ -63,7 +63,7 @@
         "summary": "Gets a block for a given number.",
         "params": [
           {
-            "$ref": "#/components/contentDescriptors/BlockNumber"
+              "$ref": "#/components/contentDescriptors/BlockNumber"
           },
           {
             "name": "includeTransactions",
@@ -95,7 +95,7 @@
         "summary": "Returns the hash of best block.",
         "params": [],
         "result": {
-            "$ref": "#/components/contentDescriptors/Transaction"
+            "$ref": "#/components/contentDescriptors/BlockHash"
         }
       },
       {
@@ -111,7 +111,10 @@
               }
         ],
         "result": {
-            "$ref": "#/components/contentDescriptors/BlockNumber"
+          "name": "epochNumber",
+          "schema": {
+            "$ref": "#/components/schemas/BlockNumber"
+          }
         }
       },
       {
@@ -126,13 +129,9 @@
         "name": "cfx_getBlocksByEpoch",
         "summary": "Returns hashes of blocks located in some epoch.",
         "params": [
-            {
-                "name": "blockHash",
-                "required": false,
-                "schema": {
-                  "$ref": "#/components/schemas/BlockHash"
-                }
-              }
+          {
+            "$ref": "#/components/contentDescriptors/BlockNumber"
+          }
         ],
         "result": {
             "name": "Array of block hashes",
@@ -157,11 +156,7 @@
               }
             },
             {
-              "name": "blockNumber",
-              "description": "A BlockNumber at which to request the balance",
-              "schema": {
-                "$ref": "#/components/schemas/BlockNumber"
-              }
+                "$ref": "#/components/contentDescriptors/BlockNumber"
             }
           ],
           "result": {
@@ -664,8 +659,8 @@
             "hash": {
               "$ref": "#/components/schemas/TransactionHash"
             },
-            "input": {
-              "type": "string",
+            "data": {
+              "$ref": "#/components/schemas/Keccak",
               "description": "The data field sent with the transaction"
             },
             "nonce": {
@@ -685,15 +680,15 @@
               "$ref": "#/components/schemas/Keccak"
             },
             "v": {
-              "type": "string",
-              "description": "ECDSA recovery id"
+              "description": "ECDSA recovery id",
+              "$ref": "#/components/schemas/Keccak"
             },
             "r": {
-              "type": "string",
+              "$ref": "#/components/schemas/Keccak",
               "description": "ECDSA signature r"
             },
             "s": {
-              "type": "string",
+              "$ref": "#/components/schemas/Keccak",
               "description": "ECDSA signature s"
             }
           }
