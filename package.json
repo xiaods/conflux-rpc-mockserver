@@ -1,0 +1,15 @@
+{
+  "name": "conflux-rpc-mockserver",
+  "version": "1.0.0",
+  "description": "openrpc for conflux chain",
+  "main": "index.js",
+  "scripts": {
+    "mock-server": "open-rpc-mock-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tommyxiao <xiaods@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@open-rpc/mock-server": "^1.1.1"
+  }
+}
