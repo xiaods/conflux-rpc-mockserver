@@ -106,7 +106,7 @@
                 "name": "blockHash",
                 "required": false,
                 "schema": {
-                  "$ref": "#/components/schemas/BlockHash"
+                  "$ref": "#/components/schemas/BlockNumberTag"
                 }
               }
         ],
